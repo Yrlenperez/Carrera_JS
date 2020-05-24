@@ -1,0 +1,6 @@
+<h5 appHighlight>{{ data.description | uppercase }}</h5>
+<img [src]="data.image" alt="img">
+<strong>{{ data.price | currency }}</strong>
+<p>{{ today | date:'HH:mm' }}</p>
+<button (click)="addCart()">add cart</button>
+<a [routerLink]="['/products', data.id]">ver detalle</a>

@@ -1,0 +1,31 @@
+{{'hola mundo'}}
+{{ 1 + 2  }}
+
+
+<input type="text" [(ngModel)]="title">
+{{ title }} 
+
+<!-- renderizando pipe propio  -->
+<input type="text" [(ngModel)]="power">
+{{ power | exponential }}
+
+<div *ngIf="title === 'yrlen'">
+    este es un div
+</div>
+
+<div [ngSwitch]="title">
+    <p *ngSwitchCase="'yrlen'">este es yrlen</p>
+    <p *ngSwitchCase="'dora'">este es dora</p>
+    <p *ngSwitchCase="'nana'">este es nana</p>
+</div>
+
+
+<button (click)="addItem()" > Add Item</button>
+
+<ul>
+    <li *ngIf="items.length === 0">La lista esta vacia</li>
+    <li *ngFor="let name of items; index as i">
+        {{ name }}{{ i }}
+        <button (click)="deleteItem(i)">Delete</button>
+    </li>
+</ul>
